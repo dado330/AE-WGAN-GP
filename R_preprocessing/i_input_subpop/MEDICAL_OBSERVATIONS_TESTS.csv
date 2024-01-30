@@ -1,0 +1,15 @@
+person_id,mo_date,mo_code,mo_record_vocabulary,mo_source_table,mo_source_column,mo_source_value,mo_unit,mo_meaning,mo_origin,visit_occurrence_id
+ECVM210900001,20210101,,PCR,SIDIAP.Covid_tests,PCR,positive,,COVID-Test,SIDIAP.Covid_tests,
+ECVM210900008,20210813,,ANTIGENS,SIDIAP.Covid_tests,ANTIGENS,positive,,COVID-Test,SIDIAP.Covid_tests,
+ECVM210900006,20210211,,PCR,SIDIAP.Covid_tests,PCR,negative,,COVID-Test,SIDIAP.Covid_tests,
+ECVM210900001,20210601,,ANTICOSSOS,SIDIAP.Covid_tests,ANTICOSSOS,positive,,COVID-Test,SIDIAP.Covid_tests,
+ECVM210900011,20200609,,ANTICOSSOS,SIDIAP.Covid_tests,ANTICOSSOS,undetermined,,COVID-Test,SIDIAP.Covid_tests,
+ECVM210908974,20201103,,PCR,SIDIAP.Covid_tests,PCR,positive,,COVID-Test,SIDIAP.Covid_tests,
+ECVM210900013,20210112,,ANTIGENS,SIDIAP.Covid_tests,ANTIGENS,positive,,COVID-Test,SIDIAP.Covid_tests,
+ECVM210900010,20210112,,,,,positive,,covid19_pcr_test,RedMIVA,
+ECVM210900010,20210115,,,,,positive,,covid19_pcr_test,RedMIVA,
+ECVM210900010,20210512,,,,,positive,,covid19_pcr_test,RedMIVA,
+ECVM210900010,20210515,,,,,positive,,covid19_pcr_test,RedMIVA,
+ECVM210900010,20210515,,,,,positive,,covid19_pcr_test,RedMIVA,
+ECVM210900001,20210603,91.12.1_0,Veneto_lab_coding_system,,,positive,,listoftests,TABRESULTS,
+
