@@ -224,7 +224,7 @@
 
 \begin{document}
 \maketitle
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[borderline west={3pt}{0pt}{shadecolor}, sharp corners, enhanced, boxrule=0pt, interior hidden, frame hidden, breakable]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[interior hidden, borderline west={3pt}{0pt}{shadecolor}, enhanced, breakable, frame hidden, boxrule=0pt, sharp corners]}{\end{tcolorbox}}\fi
 
 \renewcommand*\contentsname{Table of contents}
 {
@@ -232,8 +232,6 @@
 \setcounter{tocdepth}{2}
 \tableofcontents
 }
-\bookmarksetup{startatroot}
-
 \hypertarget{introduction}{%
 \chapter{Introduction}\label{introduction}}
 
@@ -270,37 +268,6 @@ The second chapter talks about the AutoEncoder
 In the third chapter I describe how I setup Colab and Git
 
 Finally in the last chapter contains everything regarding the GAN
-
-\bookmarksetup{startatroot}
-
-\hypertarget{references}{%
-\chapter*{References}\label{references}}
-\addcontentsline{toc}{chapter}{References}
-
-\markboth{References}{References}
-
-\hypertarget{refs}{}
-\begin{CSLReferences}{1}{0}
-\leavevmode\vadjust pre{\hypertarget{ref-MedGAN}{}}%
-Choi, Edward, Siddharth Biswal, Bradley Malin, Jon Duke, Walter F.
-Stewart, and Jimeng Sun. 2018. {``Generating Multi-Label Discrete
-Patient Records Using Generative Adversarial Networks,''} no.
-arXiv:1703.06490 (January).
-\url{https://doi.org/10.48550/arXiv.1703.06490}.
-
-\leavevmode\vadjust pre{\hypertarget{ref-gulrajani2017improved}{}}%
-Gulrajani, Ishaan, Faruk Ahmed, Martin Arjovsky, Vincent Dumoulin, and
-Aaron Courville. 2017. {``Improved Training of Wasserstein GANs.''}
-\url{https://arxiv.org/abs/1704.00028}.
-
-\leavevmode\vadjust pre{\hypertarget{ref-ConcePTION}{}}%
-Thurin et, al. 2022. {``From Inception to ConcePTION: Genesis of a
-Network to Support Better Monitoring and Communication of Medication
-Safety During Pregnancy and Breastfeeding.''} \emph{Clinical
-Pharmacology \& Therapeutics} 111 (1): 321--31.
-\url{https://doi.org/10.1002/cpt.2476}.
-
-\end{CSLReferences}
 
 \part{Introduction}
 
@@ -1568,6 +1535,37 @@ cases when the person has 0 events but even with that taken into account
 the performance does not drop much.
 
 The Mean Square Error is only 0.28 which is very good.
+
+\bookmarksetup{startatroot}
+
+\hypertarget{references}{%
+\chapter*{References}\label{references}}
+\addcontentsline{toc}{chapter}{References}
+
+\markboth{References}{References}
+
+\hypertarget{refs}{}
+\begin{CSLReferences}{1}{0}
+\leavevmode\vadjust pre{\hypertarget{ref-MedGAN}{}}%
+Choi, Edward, Siddharth Biswal, Bradley Malin, Jon Duke, Walter F.
+Stewart, and Jimeng Sun. 2018. {``Generating Multi-Label Discrete
+Patient Records Using Generative Adversarial Networks,''} no.
+arXiv:1703.06490 (January).
+\url{https://doi.org/10.48550/arXiv.1703.06490}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-gulrajani2017improved}{}}%
+Gulrajani, Ishaan, Faruk Ahmed, Martin Arjovsky, Vincent Dumoulin, and
+Aaron Courville. 2017. {``Improved Training of Wasserstein GANs.''}
+\url{https://arxiv.org/abs/1704.00028}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-ConcePTION}{}}%
+Thurin et, al. 2022. {``From Inception to ConcePTION: Genesis of a
+Network to Support Better Monitoring and Communication of Medication
+Safety During Pregnancy and Breastfeeding.''} \emph{Clinical
+Pharmacology \& Therapeutics} 111 (1): 321--31.
+\url{https://doi.org/10.1002/cpt.2476}.
+
+\end{CSLReferences}
 
 
 

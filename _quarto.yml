@@ -7,10 +7,9 @@ book:
   author: "Davide Messina"
   date: "03/10/2024"
   chapters:
-    - index.qmd
-    - references.qmd
     - part: "Introduction"
       chapters:
+        - index.qmd
         - medgan.qmd
         - cdm_and_instance.qmd
         - preprocessing_using_r.qmd
@@ -43,6 +42,7 @@ book:
         - WGAN.qmd
         - WGAN_GP.qmd
         - results.qmd
+    - references.qmd
 
 bibliography: references.bib
 
