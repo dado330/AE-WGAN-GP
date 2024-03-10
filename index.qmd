@@ -1,0 +1,21 @@
+# Introduction
+
+Some people say that we are currently living in the Information Age.
+
+In many fields there is nowadays a necessity to have representative synthetic data for multiple reasons:
+
+1)  By simulating actual data characteristics and patterns, they are able to mimic real-world scenarios correctly. Such sets empower researchers to query the dataset and expect an accurate response by impersonating features and trends of true data
+
+2)  They help researchers overcome limitations and ethical concerns that are usually associated with using real data. At times, privacy, security or legal restrictions could limit access to authentic data. By utilizing synthetic data these concerns can be alleviated.
+
+The path I took to develop the AE-WGAN-GP model from scratch has been quite a journey.
+
+I will attempt to replicate the informal style and tone found in some medium post.
+
+In the first chapter I will explain the general idea I had in the beginning and the preprocessing of the data.
+
+The second chapter talks about the AutoEncoder
+
+In the third chapter I describe how I setup Colab and Git
+
+Finally in the last chapter contains everything regarding the GAN

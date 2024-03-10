@@ -1,0 +1,17 @@
+---
+title: "Fixing what found in GitHub"
+---
+
+After cloning the new repo I tried analyzing the script to understand what it was doing and the reason behind each actions.
+
+I made a few observation and changes:
+
+-   The input data in this case was not a Numpy matrix but a series of Numpy arrays.\
+    I then changed accordingly the procedure to transform the R data in the Numpy object.
+-   The original paper works with count or binary variables (XOR) while this script utilizes both at the same times./ I'm going to discuss this topic in the AE and WGAN-GP sections.
+-   The class AdamWeightDecay defined in the script was not working correctly so I just switched to AdamW function defined in tf.keras.optimizers since it didn't seem to me the original class was doing anything special.
+-   The argument ***interpolation*** of the function Numpy.nanpercentile() has been deprecated so I changed to ***method*** after looking at the documentation online.
+-   The script was creating 5 different models. I only needed one so I removed a cycle.
+-   Changed paths of both the input data and output files
+
+After this I was ready to train the MedGAN on my data (or so I thought...)

@@ -1,0 +1,92 @@
+{
+  "index.qmd": {
+    "index.html": "e12538b9"
+  },
+  "intro.qmd": {
+    "intro.html": "857da562"
+  },
+  "summary.qmd": {
+    "summary.html": "cccf7deb"
+  },
+  "references.qmd": {
+    "references.html": "401e0c18"
+  },
+  "medgan.qmd": {
+    "medgan.html": "66928329"
+  },
+  "cdm_and_instance.qmd": {
+    "cdm_and_instance.html": "013deb8b"
+  },
+  "preprocessing_using_r.qmd": {
+    "preprocessing_using_r.html": "ff9709f4"
+  },
+  "local_env.qmd": {
+    "local_env.html": "1f5b80d3"
+  },
+  "why_ae_in_gan.qmd": {
+    "why_ae_in_gan.html": "d9883568"
+  },
+  "original_code.qmd": {
+    "original_code.html": "6ecf9372"
+  },
+  "fix_github.qmd": {
+    "fix_github.html": "650f8bf4"
+  },
+  "AE_first_time.qmd": {
+    "AE_first_time.html": "8c6b9e88"
+  },
+  "encoder_activation.qmd": {
+    "encoder_activation.html": "b4dffdaa"
+  },
+  "AE_hyperparameters.qmd": {
+    "AE_hyperparameters.html": "b9816fe4"
+  },
+  "expand_models.qmd": {
+    "expand_models.html": "44625bf2"
+  },
+  "custom_loss.qmd": {
+    "custom_loss.html": "dae6444d"
+  },
+  "AE_activation.qmd": {
+    "AE_activation.html": "00e95155"
+  },
+  "general_param_AE.qmd": {
+    "general_param_AE.html": "a2b04715"
+  },
+  "bad_vs_bad.qmd": {
+    "bad_vs_bad.html": "c066fbd9"
+  },
+  "why_colab.qmd": {
+    "why_colab.html": "51b58e21"
+  },
+  "setup_drive.qmd": {
+    "setup_drive.html": "f2bec4e6"
+  },
+  "setup_git.qmd": {
+    "setup_git.html": "5dfad1a8"
+  },
+  "drawback_summary.qmd": {
+    "drawback_summary.html": "18f0f44a"
+  },
+  "GAN_first_time.qmd": {
+    "GAN_first_time.html": "ed4c1321"
+  },
+  "results.qmd": {
+    "results.html": "846bdb51"
+  },
+  "tentative_solutions.qmd": {
+    "tentative_solutions.html": "a937c1e3"
+  },
+  "training_WGAN_GP.qmd": {
+    "training_WGAN_GP.html": "fcb0efb6"
+  },
+  "WGAN.qmd": {
+    "WGAN.html": "1bd6b500"
+  },
+  "WGAN_GP.qmd": {
+    "WGAN_GP.html": "64086b67"
+  },
+  "mode_collapse.qmd": {
+    "mode_collapse.html": "0524dba8"
+  }
+}

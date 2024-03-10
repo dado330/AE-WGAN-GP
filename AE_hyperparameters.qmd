@@ -1,0 +1,26 @@
+---
+title: "Hyperparameters"
+---
+
+I then started improving the model by carefully testing combinations of hyperparameters because:
+
+![](pick_hyperparameters.png)
+
+I've tried multiple times to changes parameters some of them are:
+
+-   Number of models trained:\
+    Maybe the model is not stable and every instance may result in very different final losses.
+-   Increase layers size and networks depth:\
+    The Encoder and Decoder may not have the capabilities to learn correctly because there aren't sufficient nodes/connections between them.
+-   Decreasing learning rate γ, β1 or β2:\
+    If the model is learning too quickly it might be overshooting and the loss may be bouncing around its minimum without really decreasing.
+-   Increasing learning rate γ, β1 or β2:\
+    If the model is learning too slowly it can get stuck in a local minima.
+-   Change batch size:\
+    Less important than previous points. In theory larger batches should decrease learning rate but make the model more consistent, the other way around for smaller batches. No real changes in my opinion in this case. I didn't really think this would have been a solution since the model was already consistent but converging to a not good enough state.
+-   Batch normalization:\
+    Centering and scaling the input of a layer should make the model converge faster and more stable.
+-   Activation function of inner layers (and Batch normalization):\
+    I tried using Selu as activation function instead of Relu to add internal normalization and to not remove negative weights.
+
+In the sections I will explain what worked in my case.

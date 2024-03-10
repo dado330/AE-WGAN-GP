@@ -1,0 +1,16 @@
+{
+  "hash": "c80649d176270274c8459cafbfc5fb7b",
+  "result": {
+    "markdown": "# Preface {.unnumbered}\n\nThis is a Quarto book.\n\nTo learn more about Quarto books visit <https://quarto.org/docs/books>.\n\n\n::: {.cell}\n\n```{.r .cell-code}\n1 + 1\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n[1] 2\n```\n:::\n:::\n\n\nA. Introduction\n\n1.  Why?\n2.  Data instance and CDM\n3.  Preprocessing using R\n4.  Medgan\n5.  Original code is unusable\n6.  Fixing what found in GitHub\n\nB. AE\n\n1.  Fixing what found in GitHub #2\n2.  Fixing what found in GitHub\n3.  First difficulties\n4.  Change size of layers\n5.  Still mode collapsing\n6.  Change in Loss function\n7.  Fine tune learning rate\n8.  Training\n9.  Results\n\nC. COLAB 1. Why Colab 2. Setup on Drive 3. Open GitHub repo 4. Setup git on Colab\n\nC. GAN\n\n1.  Original code is unusable again\n2.  Fixing once again\n3.  Again mode collapsing\n4.  Modifying the loss?\n5.  Why WGAN-GP?\n6.  Fixing Keras implementation\n7.  Fine tune parameters\n8.  Training\n9.  Results\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

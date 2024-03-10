@@ -1,0 +1,63 @@
+---
+title: "Setup Git"
+---
+
+At some point I wanted to test the script on my local machine before running it in Colab (see next chapter and section) but copying the files was redundant and prone to errors.\
+In addition I discovered that once I shared my notebook with some else directly from Colab all outputs will be lost.
+
+The solution to these problems I arrived was using Git, a distributed version control system.
+
+Firstly, I opened a GitHub repository and from my local machine I uploaded the preprocessing and the input data.\
+On the VM the process is slightly more difficult:
+
+1.  I setup my credentials and path to GitHub. Credentials are to used only during the push to GitHub
+
+``` python
+GIT_USERNAME = "dado330"
+GIT_MAIL = "messina.davide.statistician@gmail.com"
+GIT_REPO = "https://github.com/dado330/AE-WGAN-GP"
+```
+
+2.  I cloned the repository on the VM. I didn't need any form of authentication since the repo is public.
+
+``` python
+!git clone $GIT_REPO
+```
+
+3.  I inserted a cell to pull changes I've tested locally.
+
+``` python
+%%bash
+cd /content/AE-WGAN-GP
+git pull origin main
+```
+
+4.  This cell makes Git aware of our credentials
+
+``` python
+!git config --global user.email $GIT_MAIL
+!git config --global user.name $GIT_USERNAME
+```
+
+5.  To push changes we need a token. You can easily generate one in your GitHub account with at least Repo scope. (For example: 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).\
+    Then set the origin where to push the commits to a combinations of token and repository link as below.
+
+``` python
+%%bash
+cd /content/AE-WGAN-GP
+git remote set-url origin "https://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@github.com/dado330/AE-WGAN-GP.git"
+```
+
+6.  Here I stage all changes. Commit them with a message and then push the commit to the origin defined previously.
+
+``` python
+%%bash
+cd /content/AE-WGAN-GP
+git add -A
+git commit -m "Updated comments and generated data"
+git push -u origin main
+```
+
+The Jupyter notebook was saved on the repository using the internal options of Google Colab.
+
+Now all files related to the projects are publicly accessible and included the notebook's outputs.

@@ -1,0 +1,39 @@
+---
+title: "Drawbacks and final summary"
+---
+
+One of the reason to make a first run on my local machine before running the model on Colab was the time limit imposed the virtual machine instance by Google.
+
+After 12 hours the disconnection is automatic but it often happens before that limit if Google feel that you are not interacting with the session anymore.
+
+![This is how I felt](colab_sleep.webp)
+
+If I needed to be away from my PC I used a software to emulate key strokes, mouse movements and clicks.
+
+The real issue when I was working and in the meantime the model was running on Colab in the background, a situation which happened most of the times.\
+In this situation it happened multiple times that my session disconnected while the model was still training.
+
+Another reason to use Colab was to have access to a GPU to train my models.\
+I discovered after testing that GANs do not really take advantage of the computational power of a GPU so I was quite bummed out. It was not uncommon to have a GPU instance slower than a CPU one.\
+There was also a huge variance between VM instances with respect to running time of the models: it could happen that opening a new VM would double the computation time of each epochs with changing any parameters.\
+In addition since the VM's resources we are with are shared between multiple user on a single server there is a penalty in performance. The time it takes to run the model on Colab is comparable to what my PC is capable of using an I3 from more than 10 years ago and DDR3.
+
+To summarize my experience with google Colab I would say:
+
+Positive:
+
+-   Python environment already setup. No need check python or package dependencies/versions, GPU drivers, etc..
+-   Use Jupyter notebook
+-   Do not use local machine resources which can then be used for other tasks
+-   Machine has a discrete amount of RAM to run the model (more than the 16GB on my PC)
+
+Neutral:
+
+-   Sharing the notebook from within Colab will lose all output but there is a solution by using Git
+-   There is a penalty in the performance with respect to the same machine running the same model locally
+
+Negative:
+
+-   Variance in performance between VM instances of the same class
+-   Disconnections are possible even before the 12 hours limit
+-   Once your session is disconnected all data not saved somewhere else are lost

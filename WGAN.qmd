@@ -1,0 +1,18 @@
+---
+title: "WGAN"
+---
+
+I tried searching for an easier model to train and I found the WGAN.\
+It promises improve stability and less probability of diverging.
+
+This is possible because this time we are not constraining the generator but only the discriminator. At the same time what we want to use from the WGAN in the end is the Generator to create synthetic data.
+
+But if we are not defining a loss function how can we evaluate the Generator performance?
+
+![It's easy!](no_loss.PNG){fig-align="center"}
+
+Another very important advantage of WGAN over traditional GAN is that the discriminator loss function should be connected to the quality of the simulated data using that model and consequently easier to interpret. Lower loss values should translate in better generation of synthetic data.
+
+However, I quickly discovered how even with the vanilla WGAN I had problems in getting useful results because, in addition to the hyperparameters defined in the previous section, I needed to setup the clipping factor of the weights that enforces the Lipschitz constraint.
+
+I had the impression fine tuning that parameter wouldn't be easy. At the same time the WGAN was a clear improvement over the simple GAN so I tried to find other researches/articles in how to setup correctly the clipping factor.

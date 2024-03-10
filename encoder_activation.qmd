@@ -1,0 +1,15 @@
+---
+title: "Activations of output layer of Encoder"
+---
+
+I started reviewing the Encoder and the Decoder to find macroscopic mistakes or something wrong at a glance. I didn't noticed anything in particular so I started reading the MedGAN paper to look for clues.
+
+I subsequently noticed how the activation function of the output layer I used for the Encoder was a sigmoid while in the paper was a hyperbolic tangent (Tanh).\
+I changed it and the loss decreased from 800\~1000 to around 500\~700. All the values were still 0, they were just converging to 0 faster probably.
+
+It's almost always preferable to use Tanh instead of sigmoid as action function whenever it is possible. An example of when it is better to use the sigmoid is in our case as activation function of the Decoder's output layer: each value of our original data (so our ideal output) is 0 or 1, since the sigmoid output values from 0 to 1 this is a perfect fit. On the other hand it is not important what is the output of the Encoder. The Encoder map the original input onto a latent space which it is not necessary to be restricted to the range \[0, 1\]
+
+The reason the Tanh is in general better than the sigmoid is simple: the outputs of the Tanh are zero-centered.\
+This translates in easier and more stable training for the model.
+
+Obviously the model as of right now it's still useless so I still continued to fine tune the network.

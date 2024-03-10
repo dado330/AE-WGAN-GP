@@ -1,0 +1,18 @@
+---
+title: "Miscellaneous Hyperparameters"
+---
+
+As optimizers I left what was already there, so AdamW.
+
+I used different learning rates during the previous training but in general:
+
+-   0.0001 the first 3 epochs
+-   0.00006 between 4 and 10 epochs
+-   0.00003 between 11 and 20 epochs
+-   0.00001 after 21 epochs
+
+The higher learning rate at the beginning is used to speed up the training while the lower learning rate at the end is to fine tune the model.
+
+I slightly decreased β~1~ to help lowering the learning rate.
+
+I decreased weight decay too, to be consistent with the lower learning rate.

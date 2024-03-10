@@ -1,0 +1,33 @@
+---
+title: "Activations of hidden layers of AE"
+---
+
+Both the Encoder and the Decoder used Relu as activation function of their hidden layers. Relu is easy to calculate but at the same time negative inputs turns to 0 instantaneously.
+
+Using Tanh as activation function of the output layer of the Encoder means it is possible to have negative values as output so we might want to change the Relus to something else.
+
+I choosed to try leaky Relu but there were no major changes between this and Relu. I then decided to use Tanh as activation layer of the hidden layers too.\
+This change was very impactful and the loss became 0 very fast.
+
+Using 4096 as maximum size of the model previously increased the computation time to around 40s so this may not be feasible when will train the GAN so I decided to train and decrease the size of the models.
+
+As a summary:
+
+-   Maximum size 4096, loss: \~0
+-   Maximum size 2048, loss: \~0
+-   Maximum size 1024, loss: \~8 (but on test data \~20)
+-   Maximum size 512, loss: \~25 (but on test data \~50)
+-   Maximum size 256, loss: \~250
+
+To get those loss values I needed to gradually increase then number of epochs, from 50 for the 4096 size to 1000 for the 256 size.
+
+In an effort to increase performance I then implemented Batch Normalization (BN) after each hidden layer but without notable results.
+
+Since changing the activation function of the hidden layer has such a big impact I decided to make a new attempt.\
+I tried to use more unusual activations and found Selu to be very good. This maybe be caused by the self-normalizing nature of the activation function which works better than BN in this case.
+
+With Selu I could get Encoder and Decoder with maximum size 512 to have 0 loss and train much faster in less than 50 epochs compared to 400 with Tanh
+
+Using 256 as maximum size still left me with around 40\~80 loss.
+
+I thought of the possibility to change the activation function of the Encoder's output layer too to Selu but I was unsure if that would creating problems in the GAN. The Selu didn't seem symmetric so taking a sample from a Normal distribution might not be ideal (Increasing the difficulty in training the Generator)

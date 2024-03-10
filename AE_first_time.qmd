@@ -1,0 +1,23 @@
+---
+title: "Running the AutoEncoder for the first time"
+---
+
+![](ae_0.png)
+
+Above is pretty much my reaction when I trained for the first time the AE. The loss did converges but it wasn't near zero at all so the model was not learning properly.
+
+To help visualizing what was going on I added a piece of code that would print the current batch, synthetic and then real data.
+
+``` python
+if np.random.uniform(size=1) > 0.99:  # <1>
+  print("synthetic")                  # <2>
+  print(tf.round(synthetic).numpy())  # <2>
+  print("real")                       # <3>
+  print(real.numpy())                 # <3>
+```
+
+1.  Every 1 out 100 batches do
+2.  Print the reconstructed data
+3.  Print the original data
+
+I then noticed how the generated data initially had more frequent events as 1 for all of the records then after some time they suddenly become 0 one after the other. This was clearly not ideal.

@@ -1,0 +1,48 @@
+---
+title: "Results"
+---
+
+Using the Generator I created a dataset 1000 times larger than the initial one.
+
+![10000 Times didn't work...](10000x.png){fig-align="center"}
+
+The Generator is not perfect so some of its output contains only 0. Since that is clearly impossible I decided to remove those rows. In total they were less than 2% of the generated dataset.
+
+I then calculated the mean number of cases for each events I would get if I generated a dataset of the same size as the initial one
+
+| Varnames                       | 0_real | 0_synthetic | diff_perc |     |
+|--------------------------------|--------|-------------|-----------|-----|
+| B_COAGDIS_AESI                 | 73.0   | 73.715309   | -0.98     |     |
+| C_ARRH_AESI                    | 65.0   | 69.045921   | -6.22     |     |
+| C_CAD_AESI                     | 31.0   | 31.479591   | -1.55     |     |
+| C_MYOCARD_AESI                 | 20.0   | 17.986734   | 10.07     |     |
+| C_VALVULAR_AESI                | 50.0   | 51.130611   | -2.26     |     |
+| DEATH                          | 258.0  | 253.684692  | 1.67      |     |
+| D_PANCRACUTE_AESI              | 13.0   | 9.452041    | 27.29     |     |
+| E_DM1_AESI                     | 38.0   | 44.208164   | -16.34    |     |
+| E_GOUT_AESI                    | 27.0   | 25.344898   | 6.13      |     |
+| G_KIACUTE_AESI                 | 15.0   | 14.710204   | 1.93      |     |
+| G_UTI_AESI                     | 23.0   | 23.219387   | -0.95     |     |
+| I_INFLUENZA_AESI               | 16.0   | 14.138776   | 11.63     |     |
+| M_FRACTURES_AESI               | 60.0   | 59.522449   | 0.80      |     |
+| M_OSTEOARTHRITIS_AESI          | 28.0   | 27.116327   | 3.16      |     |
+| N_STROKEHEMO_AESI              | 10.0   | 9.992857    | 0.07      |     |
+| SO_OTITISEXT_AESI              | 36.0   | 37.114285   | -3.10     |     |
+| V_THROMBOSISARTERIALALGOR_AESI | 45.0   | 45.730614   | -1.62     |     |
+| V_VTEALGORITHM_AESI            | 19.0   | 19.263266   | -1.39     |     |
+
+The script reproduce well most of the variables. However D_PANCRACUTE_AESI, C_MYOCARD_AESI and I_INFLUENZA_AESI are slightly underrepresented in the generated data, while E_DM1_AESI on the other hand is over represented.
+
+The Mean Square Error is 5.63 which is good enough in this case.
+
+Finally I wantef to see the number of events each persons has:
+
+| Number of events | 0_real | 0_synthetic | diff_perc |
+|------------------|--------|-------------|-----------|
+| 1.0              | 639    | 639.180612  | -0.03     |
+| 2.0              | 52     | 52.792857   | -1.52     |
+| 3.0              | 28     | 27.562245   | 1.56      |
+
+The script does a very good job in this case. I removed the impossible cases when the person has 0 events but even with that taken into account the performance does not drop much.
+
+The Mean Square Error is only 0.28 which is very good.

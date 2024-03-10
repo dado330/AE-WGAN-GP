@@ -1,0 +1,18 @@
+---
+title: "Setup on Drive"
+---
+
+The first thing I did was copying what I already have done inside cells on Colab. I then uploaded my input dataset on the VM and modified the path inside the script.
+
+After a day has passed with me cleaning the script and rerunning the AutoEncoder on Colab I found out the VM state is not saved once you are disconnected from it.
+
+The easiest solution and the one sponsored By Google is to use Google Drive.
+
+Next, I uploaded the input data on my Google Drive which is then mounted the VM on Colab using the following command (and by giving many permissions)
+
+``` python
+from google.colab import drive
+drive.mount(‘/content/gdrive’)
+```
+
+I changed again the path to the input files (and checkpoints) and rerun again the AutoEncoder.

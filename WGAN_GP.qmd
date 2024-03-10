@@ -1,0 +1,16 @@
+---
+title: "WGAN-GP"
+---
+
+Searching for WGAN models tutorials lead me to the a derivative model called WGAN-GP from an example in the [Keras documentation](https://keras.io/examples/generative/wgan_gp/).
+
+The original was easy to find here: [@gulrajani2017improved]
+
+Here the enforcing of the Lipschitz constraints is not done by clipping weights but in alternative way through a gradient penalty. This a softer version of the original constraint since we want the weights to converge to 1 and not simply clip them as before.
+
+In the code from Keras documentation the generate the interpolated data for the gradient penalty by calculating the difference between generated and real data multiplied by a variable sampled from a uniform(0, 1) which is then added to the real data.\
+In the original paper however the first term is added to the generated image. I'm not sure why this is setup as such in the example but I changed it to reflect what is inside the manuscript.
+
+In addition in the WGAN-GP they highlight how to not use batch normalization in the Discriminator so I removed all of them. In their stead I decide to use the Selu which normalize internally.\
+
+For the gradient penalty coefficient λ I decided to retain what is specified in the paper, so 10. Same treatment for learning rates, βs and number of times the Discriminator is trained each epoch.

@@ -1,0 +1,11 @@
+---
+title: "MedGAN"
+---
+
+The original MedGAN article [@MedGAN] was written by Choi et al. in 2017 and descrived for the first time a way to generate realistic synthetic patient records.
+
+![The original MedGAN](MedGan.png) The idea was simple train: an autoencoder on the original data and then use its decoder as part of the generator of a GAN network to gnerate synthetic data.
+
+My initial idea was to modify the input of the network proposed in the original paper to ingest my dataset, maybe play a little with activation functions and optimizers to find the optimal implementation for my use case.
+
+![Boy, was I wrong!](medgan-meme.jpg){fig-align="center"}

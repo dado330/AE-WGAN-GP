@@ -1,0 +1,29 @@
+---
+title: "CDM and Data instance"
+bibliography: references.bib
+---
+
+ConcePTION[see @ConcePTION] is an IMI project which began in 2019. As one of the project outputs, ConcePTION aimed to establish a trusted ecosystem that generates and disseminates reliable, evidence-based information regarding effects of medication used during pregnancy and breastfeeding. To this end, a CDM was designed to manage, within constrained timelines and budget, the heterogeneity inherent in the diverse data sources in Europe.
+
+The ConcePTION CDM includes 16 tables. Each table includes multiple variables. The picture below summarises the ConcePTION CDM.
+
+As you can see, the tables have four different colours. The colours indicate the four types of data tables:
+
+-   Green: Routine healthcare data, such as data related to medical events (diagnoses/symptoms), medicines, vaccines, medical procedures and medical observations.
+-   Dark blue: Surveillance data, such as registries (birth registries, congenital anomaly registries, disease registries, ...), surveys or cohorts.
+-   Light blue: Curated data, such as demographics, observation periods and person relationships (e.g., mother/child linkage).
+-   Grey: Metadata, i.e., information regarding the data in the model, such as extraction dates and drugs detailed definition.
+
+Linkages between the different tables are represented by lines:
+
+-   Solid black lines: The linkages across records of the same person (e.g., patient demographics from Persons table to diagnosis codes from Events table).
+-   Dotted lines: The linkages across items extracted from the same record (e.g., hospital stays from Visit occurrence table to diagnosis codes from Events table).
+-   Solid grey lines: The linkages from items referring to a medicinal product or vaccines to the full product description in the Product table.
+
+![](Common%20Data%20Model.png)
+
+A data instance of a CDM refers to a set of structured data that conforms to the predefined schema and semantics.
+
+To train the AE-WGAN-GP I used synthetic data since for privacy concerns I could used real data.
+
+The instance I used is available [here](https://github.com/dado330/AE-WGAN-GP/tree/main/R_preprocessing/i_input_subpop).

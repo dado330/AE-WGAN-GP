@@ -1,0 +1,23 @@
+---
+title: "Bad model vs Bad model"
+---
+
+The model until now it's working very well but it is because it clearly overfitting.
+
+I then tried to create models with lower or same units as the input but they couldn't recreate the original data well.
+
+It was necessary to decide if I should use the overfitting model (Model A) or the not accurate one (Model B)
+
+![The problem I was facing could be summarized by this image](overfitting.png)
+
+In general it is better to use neither of them, obviously, but in our case which is the worse model?
+
+The issue with the model A is that it is probably only capable of reconstructing data very similar to the training data.
+
+The models B on the other hand don't encode and decode the more uncommon event at all. They are treated as not existent.
+
+The objective of the MedGAN (and AE-WGAN-GP) is to generate synthetic data similar to the original one. With model A the data will be very similar almost identical to the original while model B won't create uncommon variables as they will always be 0.
+
+This crucial in our case since in epidemiological studies we are often more interested in rare events since there is less information regarding them in the litereature.
+
+Taking into account the above mentioned reasons I decided to use model A, so the overfitting one.

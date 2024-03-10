@@ -1,0 +1,20 @@
+---
+title: "Running the GAN for the first time"
+---
+
+Now it is time to run the GAN and try to really simulate our synthetic data.
+
+In the previous chapter "Fixing what found in GitHub" I already discussed what I changed before the first run.\
+In addition I needed the changed the output of the Generator to be 512 units, in line with what is the input of the Decoder.
+
+I started running the model and these were my observation:
+
+1.  At the very beginning there a moderate decrease in Generator while the Discriminator stayed pretty much the same
+2.  The Generator loss continued to decrease and the Discriminator one started to increase
+3.  This trend was not linear in both networks
+4.  After some time the Discriminator loss started to decrease and the Generator one to increase
+5.  The Discriminator loss converged to a very small number while the Generator loss converged to a value higher than the starting point
+6.  I then tried to generate some synthetic data using the trained Generator but I discovered how it only generated observation with the event DEATH which is the most common one
+7.  The GAN was mode collapsing (see point 6)
+
+The next section will explain mode collapsing.

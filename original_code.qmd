@@ -1,0 +1,20 @@
+---
+title: "Original code is unusable"
+---
+
+After installing Python and TensorFlow I was ready to run some code.
+
+The MedGAN paper provides the souce code in a GitHub repository [here](https://github.com/mp2893/medgan) and my first idea was to reuse that.
+
+I cloned the repo on my local machine and I started changing it to be able to ingest my initial data. I removed the CMD listener found in the script and transform my R data into a Numpy matrix.
+
+Finally I tried running the script but I soon found a sad reality: the script was built using TensorFlow V1.\
+I tried disabling eager execution but to no avail: I was then made aware that to run this script I would have needed to update possibly many of its functions to their newer V2 versions which might be retroactively compatible.
+
+![This is what I feared would have happened](upgrade_TF.png){fig-align="center"}
+
+I then decided to find another, more recent, implementation of the MedGAN network, possibly implemented by a third party.\
+I searched trough forks with updated code but to no avail.
+
+I then made an extensive search on GitHub and found this repository: [Benchmarking framework of synthetic electronic health record generation models](https://github.com/yy6linda/synthetic-ehr-benchmarking).\
+Inside the repo there is a [file](https://github.com/yy6linda/synthetic-ehr-benchmarking/blob/main/data_generation/vumc/medgan_vumc.py) containing the MedGAN network and I decided it would have been easier to update that script since it was much more recent than the previous one.

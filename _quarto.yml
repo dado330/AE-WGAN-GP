@@ -1,0 +1,55 @@
+project:
+  type: book
+
+book:
+  title: "AE-WGAN-GP"
+  author: "Davide Messina"
+  date: "03/10/2024"
+  chapters:
+    - index.qmd
+    - references.qmd
+    - part: "Introduction"
+      chapters:
+        - medgan.qmd
+        - cdm_and_instance.qmd
+        - preprocessing_using_r.qmd
+        - local_env.qmd
+    - part: "AE"
+      chapters:
+        - why_ae_in_gan.qmd
+        - original_code.qmd
+        - fix_github.qmd
+        - AE_first_time.qmd
+        - encoder_activation.qmd
+        - AE_hyperparameters.qmd
+        - expand_models.qmd
+        - custom_loss.qmd
+        - AE_activation.qmd
+        - general_param_AE.qmd
+        - bad_vs_bad.qmd
+    - part: "COLAB"
+      chapters: 
+        - why_colab.qmd
+        - setup_drive.qmd
+        - setup_git.qmd
+        - drawback_summary.qmd
+    - part: "GAN"
+      chapters: 
+        - GAN_first_time.qmd
+        - mode_collapse.qmd
+        - tentative_solutions.qmd
+        - training_WGAN_GP.qmd
+        - WGAN.qmd
+        - WGAN_GP.qmd
+        - results.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+
+editor: visual
+

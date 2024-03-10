@@ -1,0 +1,13 @@
+---
+title: "Why an AutoEncoder in a GAN?"
+---
+
+In general the main advantage of AutoEncoders (AE) is the dimensionality reduction of its input. This compact representation then force the network to learn the salient features of the initial data.
+
+However using an autoencoder in combination with a GAN has several additional benefits which in my opinion are more important:
+
+1.  Help Generator Training: The generator in a GAN learns to generate realistic samples by fooling the discriminator. The autoencoder acts as a pre-training mechanism for the generator since it won't need to learn to generate discrete data but only salient features for the decoder.
+
+2.  Regularization: Incorporating an autoencoder as part of a GAN architecture can act as a regularization technique since it acts as an additional constraint for the generator by forcing it to generate samples that can be accurately reconstructed. This helps in avoiding mode collapse.
+
+More on this topics later on in the GAN chapter.

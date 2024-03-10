@@ -1,0 +1,17 @@
+---
+title: "Why use Google"
+---
+
+This chapter explain my switch from PyCharm to Google Colab.
+
+In reality this happen just after running the GAN on my PC. Before with the AE the maximum running time was around 40 minutes however the GAN surpassed the psychological threshold of 1 hour so I decided to find a faster solution.
+
+![](skeleton.jpg)
+
+Searching a solution to optimize my code made me stumble on Google Colab. Google Colab is a free cloud-based Jupyter notebook environment that runs on Google infrastructure. It allows users to run Python scripts in a browser-based interface, with access to GPUs (with caveats).
+
+![How I felt after discovering Google Colab](hulk%20gpu.png)
+
+That was perfect for me! In addition to have the possibility to run my models on a GPU I could already generate my plots and results on a Jupyter notebook which I could then share and Google Colab provides pre-installed libraries for ML and data analysis so no more problems with Python and libraries versions mess.
+
+I then started setting up the environment and understanding how to make my script works on Colab

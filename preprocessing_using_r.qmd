@@ -1,0 +1,42 @@
+---
+title: "Preprocessing using R"
+---
+
+In the previous section I explained how a data instance of the ConcePTION CDM is a complex object.
+
+Defining a model which would generate an entire instance is outside the scope of this project and even SOTA models have not arrived there yet.
+
+Using an R script I firstly extracted all conceptsets defined in the codelist available [here](https://github.com/dado330/AE-WGAN-GP/blob/main/R_preprocessing/p_parameters/archive_parameters/20231127_V2_full_codelist_at_20231127.csv)
+
+I then created variables based on those conceptsets and finally a dataset which contains records of persons positive to 18 certain events in the year prior to a specific moment. A person obviously might have more than one event in that period of time.
+
+Some of the more rare events are being excluded since the dataset size is small and training the model would be too complicated if those would have been retained.
+
+These are the final dataset characteristic:
+
+-   719 rows
+-   18 columns representing the 18 final events:
+    -   B_COAGDIS_AESI
+    -   C_ARRH_AESI
+    -   C_CAD_AESI
+    -   C_MYOCARD_AESI
+    -   C_VALVULAR_AESI
+    -   DEATH
+    -   D_PANCRACUTE_AESI
+    -   E_DM1_AESI
+    -   E_GOUT_AESI
+    -   G_KIACUTE_AESI
+    -   G_UTI_AESI
+    -   I_INFLUENZA_AESI
+    -   M_FRACTURES_AESI
+    -   M_OSTEOARTHRITIS_AESI
+    -   N_STROKEHEMO_AESI
+    -   SO_OTITISEXT_AESI
+    -   V_THROMBOSISARTERIALALGOR_AESI
+    -   V_VTEALGORITHM_AESI
+-   All 18 columns are binary variable with 1 =\> the person had the event, 0 =\> otherwise
+-   28 records with 3 events, 52 records with 2 events and the remaining with 1 event
+-   Some rare event, f.e. N_STROKEHEMO_AESI with 10 records
+-   A very common event which is DEATH with 258 records
+
+To finish the preprocessing I transformed the dataset to Numpy array ready to be ingested in Python

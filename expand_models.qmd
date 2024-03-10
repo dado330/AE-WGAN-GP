@@ -1,0 +1,20 @@
+---
+title: "Expanding the models"
+---
+
+At this point I was quite desperate to have something at least usable so I decide to increase the size of the Encoder and Decoder.
+
+I left both the networks with 3 hidden layers ans started increasing the size of each layer.
+
+At the beginning the Encoder had layers with 18, 32, 64, 128, 256 units while the Decoder 256, 128, 64, 32, 18.\
+I then begin to double the size of each layer in hope this would help the model train (except the 18 which is fixed)
+
+As a summary:
+
+-   Maximum size 256, loss: 500\~700
+-   Maximum size 512, loss: 500
+-   Maximum size 1024, loss: 500
+-   Maximum size 2048, loss: 500
+-   Maximum size 4096, loss: 500
+
+The loss remain pretty much the same, just more consistent and faster in reaching the lower bound found in more parsimonious models. Everything is still 0.

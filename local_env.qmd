@@ -1,0 +1,29 @@
+---
+title: "Local environment setup"
+---
+
+First thing I needed to do after having generated the input data for the network was to install python.
+
+I went to [Python website](https://www.python.org/downloads/), downloaded the latest release and then installed it. After installation I updated the [Windows PATH](https://datatofish.com/add-python-to-windows-path/) and upgrade pip from CMD.
+
+I then installed PyCharm as IDE through a student license and proceed to install all necessary packages. Especially [TensorFlow](https://www.tensorflow.org/).
+
+Here, I got my first error:
+
+::: {.error style="color:red;"}
+Could not find a version that satisfies the requirement TensorFlow (from versions: ) No matching distribution found for TensorFlow.
+:::
+
+After digging in Stack Overflow I found what the problem really was: TensorFlow was not yet available for the latest python version. I then downgraded python and reinstalled all packages, TensorFlow included this time.
+
+After running a sample TensorFlow script in noticed two messages that appears every time I would import the module
+
+::: {.message style="color:red;"}
+I tensorflow/core/util/port.cc:113\] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+
+I tensorflow/core/platform/cpu_feature_guard.cc:210\] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations. To enable the following instructions: SSE SSE2 SSE3 SSE4.1 SSE4.2, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+:::
+
+After a little bit of research I found the first one was not very important.
+
+The second one is a suggestion to use optimized instruction sets even not in performance-critical operations. I left this one as is because I first wanted to have a feel on the training time and as a last resort compile TensorFlow to take advantage of those instruction sets. In addition my CPU is a fairly old I3-3220 without even AVX2 support so I thought the difference would be negligible anyway.

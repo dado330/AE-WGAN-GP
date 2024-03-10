@@ -1,0 +1,18 @@
+---
+title: "Tentative solutions"
+---
+
+At the beginning I analyzed what I found in the repository and compared it to the original MedGAN paper. I quickly noticed how the Generator was incomplete since the shortcut connections were missing.
+
+In addition I tried:
+
+-   Increasing Generator number of layers (size of the layer is fixed by Decoder and shortcut connections)
+-   Increasing Discriminator number and size of layers. (best results by first increasing size and then decreasing it slowly)
+-   Decreasing learning rate and β and weight decay in Discriminator (and Generator indipendently)
+-   Define a penalty to the Binary Cross Entropy in both Generator and Discriminator losses
+-   Retrain the AutoEncoder to increase the size of the Generator
+-   Regularization with L1
+-   Switch activation function from Relu to Selu
+-   Train the Generator N times each epoch while only once for the Discriminator. In the original paper was the other way around.
+
+With some combination of hyperparameters I had the impression it was training better and more stable but I couldn't get it to stop mode collapsing in the end.

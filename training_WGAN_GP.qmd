@@ -1,0 +1,13 @@
+---
+title: "Training WGAN-GP"
+---
+
+After running the WGAN-GP on a limited number of epochs I could quickly tell that it was working.\
+This was probably possible by the changes previously done to the networks when I was testing GAN and WGAN.
+
+I then decided to halve the learning rate of both Generator and Discriminator and increase the number of epochs to 20000 to obtain the best possible result.
+
+Finally I was able to train the final model in around 6 hours on Colab. The final model was then saved on the repository as checkpoint using git.
+
+This final model's discriminator loss reached a state of bouncing around 0, so small enough, and consequently the trained Generator should be quite good, as explained before.\
+The generator loss was around -3700 but that does not influence the model performance at all so it is not a metric for it.
